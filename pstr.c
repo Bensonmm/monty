@@ -2,8 +2,8 @@
 /**
  * f_pstr - prints the string starting at the top of the stack,
  * followed by a new
- * @arch: stack head
- * @tally: line_number
+ *@arch: stack arch
+  *@tallys: line_number
  * Return: no return
 */
 void f_pstr(stack_t **arch, unsigned int tallys)
