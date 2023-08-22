@@ -1,1 +1,3 @@
 # monty
+0X19 STACKS,QUE
+UES,LIFO, FIFO
