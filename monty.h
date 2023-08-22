@@ -58,26 +58,26 @@ typedef struct instruction_s
 char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
 ssize_t getstdin(char **lineptr, int file);
 char  *clean_line(char *content);
-void f_push(stack_t **arch, unsigned int number);
-void f_pall(stack_t **arch, unsigned int number);
-void f_pint(stack_t **arch, unsigned int number);
-int execute(char *content, stack_t **arch, unsigned int tallys, FILE *file);
-void free_stack(stack_t *arch);
 void f_pop(stack_t **arch, unsigned int tallys);
 void f_swap(stack_t **arch, unsigned int tallys);
 void f_add(stack_t **arch, unsigned int tallys);
 void f_nop(stack_t **arch, unsigned int tallys);
 void f_sub(stack_t **arch, unsigned int tallys);
-void f_div(stack_t **arch, unsigned int tallys);
-void f_mul(stack_t **arch, unsigned int tallys);
-void f_mod(stack_t **arch, unsigned int tallys);
-void f_pchar(stack_t **arch, unsigned int tallys);
-void f_pstr(stack_t **arch, unsigned int tallys);
-void f_rotl(stack_t **arch, unsigned int tallys);
-void f_rotr(stack_t **arch, __attribute__((unused)) unsigned int tallys);
+void f_push(stack_t **arch, unsigned int number);
+void f_pall(stack_t **arch, unsigned int number);
+void f_pint(stack_t **arch, unsigned int number);
+int execute(char *content, stack_t **arch, unsigned int tallys, FILE *file);
+void free_stack(stack_t *arch);
 void addnode(stack_t **arch, int n);
 void addqueue(stack_t **arch, int n);
 void f_queue(stack_t **arch, unsigned int tallys);
 void f_stack(stack_t **arch, unsigned int tallys);
+void f_div(stack_t **arch, unsigned int tallys);
+void f_mul(stack_t **arch, unsigned int tallys);
+void f_mod(stack_t **arch, unsigned int tallys);
+void f_pchar(stack_t **arch, unsigned int tallys);
+void f_rotr(stack_t **arch, __attribute__((unused)) unsigned int tallys);
+
+
 
 #endif
