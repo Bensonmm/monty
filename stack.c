@@ -8,7 +8,6 @@
 void f_stack(stack_t **arch, unsigned int tallys)
 {
 	(void)arch;
-	(void)tallys
-;
+	(void)tallys;
 	bus.lifi = 0;
 }

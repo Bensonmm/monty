@@ -1,43 +1,40 @@
 #include "monty.h"
-/*
+/**
  * f_div - divides the top two elements of the stack.
-*@arch: stack arch
-  *@tallys: line_number
+ * @head: stack head
+ * @counter: line_number
  * Return: no return
- */
-
-void f_div(stack_t **arch,unsigned int tallys)
+*/
+void f_div(stack_t **head, unsigned int counter)
 {
-	stack_t *ar;
-	int len = 0' aux;
+	stack_t *h;
+	int len = 0, aux;
 
-	ar = *arch;
-	while (ar)
+	h = *head;
+	while (h)
 	{
-		ar = ar->next;
+		h = h->next;
 		len++;
 	}
-
 	if (len < 2)
-	{       
-	fprintf(stderr, "L%d: can not div, stack too short\n", tallys);
-			fclose(bus.file);
-			free(bus.content);
-			free_stack(*arch);
-			exit(EXIT_FAILURE);
-			}
-
-	ar = *arch;
-        if (ar-> == 0)
-        {
-        fprintf(stderr, "L%d: divisin by zero, stack too short\n", tallys);
-                        fclose(bus.file);
-                        free(bus.content);
-                        free_stack(*arch);
-                        exit(EXIT_FAILURE);
-                        }
-			aux = ar->n / ar->n;
-			ar->next-> = aux;
-			*arch = ar->next;
-			free(ar);
+	{
+		fprintf(stderr, "L%d: can't div, stack too short\n", counter);
+		fclose(bus.file);
+		free(bus.content);
+		free_stack(*head);
+		exit(EXIT_FAILURE);
+	}
+	h = *head;
+	if (h->n == 0)
+	{
+		fprintf(stderr, "L%d: division by zero\n", counter);
+		fclose(bus.file);
+		free(bus.content);
+		free_stack(*head);
+		exit(EXIT_FAILURE);
+	}
+	aux = h->next->n / h->n;
+	h->next->n = aux;
+	*head = h->next;
+	free(h);
 }
