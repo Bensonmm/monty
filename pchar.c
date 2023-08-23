@@ -15,7 +15,7 @@ void f_pchar(stack_t **arch, unsigned int tallys)
 	{
 		fprintf(stderr, "L%d: can't pchar, stack empty\n", tallys);
 		fclose(bus.file);
-		free(bus.content);
+		free(bus.compose);
 		free_stack(*arch);
 		exit(EXIT_FAILURE);
 	}
@@ -23,7 +23,7 @@ void f_pchar(stack_t **arch, unsigned int tallys)
 	{
 		fprintf(stderr, "L%d: can't pchar, value out of range\n", tallys);
 		fclose(bus.file);
-		free(bus.content);
+		free(bus.compose);
 		free_stack(*arch);
 		exit(EXIT_FAILURE);
 	}

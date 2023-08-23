@@ -38,7 +38,7 @@ typedef struct bus_s
 {
 	char *arg;
 	FILE *file;
-	char *content;
+	char *compose;
 	int lifi;
 }  bus_t;
 extern bus_t bus;
@@ -57,7 +57,7 @@ typedef struct instruction_s
 } instruction_t;
 char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
 ssize_t getstdin(char **lineptr, int file);
-char  *clean_line(char *content);
+char  *clean_line(char *compose);
 void f_pop(stack_t **arch, unsigned int tallys);
 void f_swap(stack_t **arch, unsigned int tallys);
 void f_add(stack_t **arch, unsigned int tallys);
@@ -66,7 +66,7 @@ void f_sub(stack_t **arch, unsigned int tallys);
 void f_push(stack_t **arch, unsigned int number);
 void f_pall(stack_t **arch, unsigned int number);
 void f_pint(stack_t **arch, unsigned int number);
-int execute(char *content, stack_t **arch, unsigned int tallys, FILE *file);
+int execute(char *compose, stack_t **arch, unsigned int tallys, FILE *file);
 void free_stack(stack_t *arch);
 void addnode(stack_t **arch, int n);
 void addqueue(stack_t **arch, int n);

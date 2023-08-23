@@ -10,7 +10,7 @@ bus_t bus = {NULL, NULL, NULL, 0};
 */
 int main(int argc, char *argv[])
 {
-	char *content;
+	char *compose;
 	FILE *file;
 	size_t size = 0;
 	ssize_t read_line = 1;
@@ -31,15 +31,15 @@ int main(int argc, char *argv[])
 	}
 	while (read_line > 0)
 	{
-		content = NULL;
-		read_line = getline(&content, &size, file);
-		bus.content = content;
+		compose = NULL;
+		read_line = getline(&compose, &size, file);
+		bus.compose = compose;
 		tallys++;
 		if (read_line > 0)
 		{
-			execute(content, &stack, tallys, file);
+			execute(compose, &stack, tallys, file);
 		}
-		free(content);
+		free(compose);
 	}
 	free_stack(stack);
 	fclose(file);

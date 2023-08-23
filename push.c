@@ -20,13 +20,13 @@ void f_push(stack_t **arch, unsigned int tallys)
 		if (flag == 1)
 		{ fprintf(stderr, "L%d: usage: push integer\n", tallys);
 			fclose(bus.file);
-			free(bus.content);
+			free(bus.compose);
 			free_stack(*arch);
 			exit(EXIT_FAILURE); }}
 	else
 	{ fprintf(stderr, "L%d: usage: push integer\n", tallys);
 		fclose(bus.file);
-		free(bus.content);
+		free(bus.compose);
 		free_stack(*arch);
 		exit(EXIT_FAILURE); }
 	n = atoi(bus.arg);

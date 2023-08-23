@@ -17,7 +17,7 @@ void f_sub(stack_t **arch, unsigned int tallys)
 	{
 		fprintf(stderr, "L%d: can't sub, stack too short\n", tallys);
 		fclose(bus.file);
-		free(bus.content);
+		free(bus.compose);
 		free_stack(*arch);
 		exit(EXIT_FAILURE);
 	}

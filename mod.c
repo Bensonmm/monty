@@ -21,7 +21,7 @@ void f_mod(stack_t **arch, unsigned int tallys)
 	{
 		fprintf(stderr, "L%d: can't mod, stack too short\n", tallys);
 		fclose(bus.file);
-		free(bus.content);
+		free(bus.compose);
 		free_stack(*arch);
 		exit(EXIT_FAILURE);
 	}
@@ -30,7 +30,7 @@ void f_mod(stack_t **arch, unsigned int tallys)
 	{
 		fprintf(stderr, "L%d: division by zero\n", tallys);
 		fclose(bus.file);
-		free(bus.content);
+		free(bus.compose);
 		free_stack(*arch);
 		exit(EXIT_FAILURE);
 	}
