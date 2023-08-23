@@ -77,7 +77,7 @@ void f_mul(stack_t **arch, unsigned int tallys);
 void f_mod(stack_t **arch, unsigned int tallys);
 void f_pchar(stack_t **arch, unsigned int tallys);
 void f_rotr(stack_t **arch, __attribute__((unused)) unsigned int tallys);
-
-
+void f_pstr(stack_t **arch, unsigned int tallys);
+void f_rotl(stack_t **arch,  __attribute__((unused)) unsigned int tallys);
 
 #endif
